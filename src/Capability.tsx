@@ -31,9 +31,8 @@ const Capability = ({ dataState, onDataReceived }: CapabilityProps) => {
         if (toODataString(dataState) === lastSuccess.current) {
           onDataReceived.call(undefined, {
             data: json.value,
-            total: 100,
+            total: json["@odata.count"],
           });
-          console.log(json["@odata.count"]);
         } else {
           requestDataIfNeeded();
         }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "@progress/kendo-theme-material/dist/all.css";
 import { DataResult, State } from "@progress/kendo-data-query";
 import {
   Grid,
@@ -39,12 +40,7 @@ const App = () => {
         onDataStateChange={dataStateChange}
       >
         {formFields.map((fields, index) => (
-          <Column
-            field={fields.field}
-            title={fields.title}
-            key={index}
-            width={fields.width}
-          />
+          <Column field={fields.field} title={fields.title} key={index} />
         ))}
       </Grid>
       <Capability dataState={dataState} onDataReceived={dataRecieved} />
